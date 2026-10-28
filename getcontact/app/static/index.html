@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>getcontact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div id="auth" class="auth hidden"></div>
+
+<div id="shell" class="shell hidden">
+  <nav class="rail" id="rail" aria-label="Main"></nav>
+  <div class="main">
+    <header class="topbar">
+      <form class="gsearch" id="gsearch" role="search">
+        <span class="ico" data-icon="search"></span>
+        <input id="gq" placeholder="Search people, titles or companies" aria-label="Search people, titles or companies" autocomplete="off">
+        <kbd>/</kbd>
+      </form>
+      <div class="topbar-right">
+        <a class="credits" href="#/api" id="credits" title="Credits used this month"></a>
+        <button class="me" id="me" aria-haspopup="menu"></button>
+        <div class="menu hidden" id="meMenu" role="menu">
+          <div class="menu-head" id="meHead"></div>
+          <a href="#/api" role="menuitem">API keys</a>
+          <a href="#/contribute" role="menuitem">Contribution settings</a>
+          <button role="menuitem" id="logout">Log out</button>
+        </div>
+      </div>
+    </header>
+    <main id="view" tabindex="-1"></main>
+  </div>
+  <aside class="drawer" id="drawer" aria-hidden="true"></aside>
+  <div class="bulkbar hidden" id="bulkbar" role="region" aria-label="Bulk actions"></div>
+</div>
+
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

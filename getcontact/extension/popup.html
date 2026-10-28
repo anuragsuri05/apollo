@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+body{font:13px -apple-system,system-ui,sans-serif;width:340px;margin:0;padding:12px;color:#1b1f2a}
+h3{margin:0 0 8px;font-size:15px}input{width:100%;box-sizing:border-box;padding:6px 8px;margin:3px 0;border:1px solid #e4e7ee;border-radius:6px}
+button{padding:6px 10px;border-radius:6px;border:1px solid #e4e7ee;background:#fff;cursor:pointer}.p{background:#4f46e5;color:#fff;border-color:#4f46e5}
+.muted{color:#6b7280;font-size:12px}pre{background:#f6f7fb;padding:8px;border-radius:6px;white-space:pre-wrap;font-size:11px;max-height:220px;overflow:auto}
+.row{display:flex;gap:6px;margin-top:6px}
+</style></head><body>
+<h3>getcontact</h3>
+<div id="setup">
+  <div class="muted">Server URL and API key (from the app's API page)</div>
+  <input id="base" placeholder="http://localhost:8000">
+  <input id="key" placeholder="gc_...">
+  <button class="p" id="save">Save</button>
+</div>
+<div id="main" style="display:none">
+  <div class="muted">Detected on this page (edit if wrong):</div>
+  <input id="name" placeholder="Full name">
+  <input id="title" placeholder="Title">
+  <input id="company" placeholder="Company">
+  <input id="domain" placeholder="Company domain (optional)">
+  <div class="row"><button class="p" id="find">Find email</button><button id="add">Save to contacts</button><button id="cfg">⚙</button></div>
+  <pre id="out"></pre>
+</div>
+<script src="popup.js"></script>
+</body></html>

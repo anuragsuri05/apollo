@@ -1,0 +1,21 @@
+From: Mail Delivery Subsystem <mailer-daemon@getcontact.local>
+To: tester@getcontact.local
+Subject: Delivery Status Notification (Failure)
+Date: Tue, 14 Oct 2026 09:00:00 +0530
+Message-ID: <dsn1@getcontact.local>
+Content-Type: multipart/report; report-type=delivery-status; boundary="b1"
+
+--b1
+Content-Type: text/plain; charset=utf-8
+
+Your message wasn't delivered to d.okafor@brightwave-systems.example because the address couldn't be found.
+
+--b1
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mx.brightwave-systems.example
+Final-Recipient: rfc822; d.okafor@brightwave-systems.example
+Action: failed
+Status: 5.1.1
+
+--b1--

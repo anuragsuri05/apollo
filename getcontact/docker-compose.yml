@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: getcontact
+      POSTGRES_PASSWORD: getcontact
+      POSTGRES_DB: getcontact
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    ports: ["5432:5432"]
+    command: postgres -c shared_buffers=512MB -c work_mem=64MB
+  api:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://getcontact:getcontact@db:5432/getcontact
+    ports: ["8000:8000"]
+    depends_on: [db]
+    volumes: ["./data:/srv/data"]
+  worker:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://getcontact:getcontact@db:5432/getcontact
+    command: python -m app.worker
+    depends_on: [db]
+volumes:
+  pgdata:
